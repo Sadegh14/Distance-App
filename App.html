@@ -1,0 +1,287 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distance App</title>
+</head>
+<style>
+    #Page {
+        float: right;
+        width: 84%;
+        height: 90%;
+        margin-right: 8%;
+        margin-top: 2.5%;
+        background-color: #2a9d8f;
+        border-radius: 5px;
+    }
+    
+    #RequestPage {
+        float: right;
+        width: 40%;
+        height: 85%;
+        margin-right: 7%;
+        margin-top: 3.5%;
+        border-radius: 4px;
+        background-color: #264653;
+        box-shadow: 0 0 5px 0 #264653;
+    }
+    
+    #ResultPage {
+        float: right;
+        width: 40%;
+        height: 85%;
+        margin-right: 7%;
+        margin-top: 3.5%;
+        border-radius: 4px;
+        background-color: #e9c46a;
+        box-shadow: 0 0 5px 0 #264653;
+    }
+    
+    #ComputingBtn {
+        float: right;
+        width: 70%;
+        height: 60px;
+        border-radius: 4px;
+        margin-top: 30%;
+        margin-right: 15%;
+        background-color: #003049;
+        color: #d62828;
+        text-align: center;
+        font-size: 33px;
+        border: none;
+    }
+    
+    #ComputingBtn:hover {
+        animation: Animation1 1s both alternate;
+    }
+    
+    #Sorter1 {
+        float: right;
+        width: 80%;
+        height: 50%;
+        margin-top: 2.5%;
+        margin-right: 10%;
+    }
+    
+    #FirstCity {
+        float: right;
+        width: 84%;
+        height: 60px;
+        margin-right: 8%;
+        margin-top: 10%;
+        background-color: #2c2a4a;
+        color: #dabfff;
+        padding-right: 10px;
+        text-align: right;
+        font-size: 25px;
+        border: none;
+        border-radius: 4px;
+    }
+    
+    #LastCity {
+        float: right;
+        width: 84%;
+        height: 60px;
+        margin-right: 8%;
+        margin-top: 5%;
+        background-color: #2c2a4a;
+        color: #dabfff;
+        padding-right: 10px;
+        text-align: right;
+        font-size: 25px;
+        border: none;
+    }
+    
+    option {
+        text-align: right;
+        padding-right: 20px;
+        background-color: #086375;
+        color: #1dd3b0;
+    }
+    
+    #Spinner {
+        display: none;
+        float: right;
+        width: 50%;
+        height: 50%;
+        margin-top: 30%;
+        margin-right: 25%;
+    }
+    
+    #SpinnerText {
+        float: right;
+        text-align: center;
+        font-size: 25px;
+        margin-top: 15px;
+        margin-right: 28%;
+    }
+    
+    #ResultText {
+        display: none;
+        float: right;
+        width: 80%;
+        height: 30%;
+        margin-top: 34%;
+        margin-right: 10%;
+        border-radius: 8px;
+        background-color: white;
+        color: black;
+        font-size: 100px;
+        text-align: center;
+        box-shadow: 0 0 3px 0 inset black;
+        padding-top: 30px;
+    }
+    
+    @keyframes Animation1 {
+        100% {
+            background-color: #4a4e69;
+            color: #c9ada7;
+        }
+    }
+    
+    .DisplayBlock {
+        display: block;
+    }
+    
+    .DisplayNone {
+        display: none;
+    }
+</style>
+
+<body>
+    <div id="Page">
+        <div id="RequestPage">
+            <div id="Sorter1">
+                <select id="FirstCity">
+                    <option value="">انتخاب کنید</option>
+                    <option value="اراک">اراک</option>
+                    <option value="اردبیل">اردبیل</option>
+                    <option value="ارومیه">ارومیه</option>
+                    <option value="اصفهان">اصفهان</option>
+                    <option value="اهواز">اهواز</option>
+                    <option value="ایلام">ایلام</option>
+                    <option value="بجنورد">بجنورد</option>
+                    <option value="بیرجند">بیرجند</option>
+                    <option value="تبریز">تبریز</option>
+                    <option value="تهران">تهران</option>
+                    <option value="رشت">رشت</option>
+                    <option value="زاهدان">زاهدان</option>
+                    <option value="زنجان">زنجان</option>
+                    <option value="ساری">ساری</option>
+                    <option value="سمنان">سمنان</option>
+                    <option value="سنندج">سنندج</option>
+                    <option value="شیراز">شیراز</option>
+                    <option value="قزوین">قزوین</option>
+                    <option value="قم">قم</option>
+                    <option value="کرمان">کرمان</option>
+                    <option value="کرمانشاه">کرمانشاه</option>
+                    <option value="گرگان">گرگان</option>
+                    <option value="مشهد">مشهد</option>
+                    <option value="همدان">همدان</option>
+                    <option value="یاسوج">یاسوج</option>
+                    <option value="یزد">یزد</option>
+                   
+                </select>
+                <br>
+                <select id="LastCity">
+                    <option value="">انتخاب کنید</option>
+                    <option value="اراک">اراک</option>
+                    <option value="اردبیل">اردبیل</option>
+                    <option value="ارومیه">ارومیه</option>
+                    <option value="اصفهان">اصفهان</option>
+                    <option value="اهواز">اهواز</option>
+                    <option value="ایلام">ایلام</option>
+                    <option value="بجنورد">بجنورد</option>
+                    <option value="بیرجند">بیرجند</option>
+                    <option value="تبریز">تبریز</option>
+                    <option value="تهران">تهران</option>
+                    <option value="رشت">رشت</option>
+                    <option value="زاهدان">زاهدان</option>
+                    <option value="زنجان">زنجان</option>
+                    <option value="ساری">ساری</option>
+                    <option value="سمنان">سمنان</option>
+                    <option value="سنندج">سنندج</option>
+                    <option value="شیراز">شیراز</option>
+                    <option value="قزوین">قزوین</option>
+                    <option value="قم">قم</option>
+                    <option value="کرمان">کرمان</option>
+                    <option value="کرمانشاه">کرمانشاه</option>
+                    <option value="گرگان">گرگان</option>
+                    <option value="مشهد">مشهد</option>
+                    <option value="همدان">همدان</option>
+                    <option value="یاسوج">یاسوج</option>
+                    <option value="یزد">یزد</option>
+                   
+                </select>
+            </div>
+            <button id="ComputingBtn">محاسبه</button>
+        </div>
+        <div id="ResultPage">
+            <div id="ResultText"></div>
+            <div id="Spinner">
+                <img src="Photoes/Spinner1.gif">
+                <p id="SpinnerText">...لطفا صبر کنید</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    // Variables
+    let Part1 = "https://api.codebazan.ir/distance/index.php?mabda=";
+    let Part2 = "&maghsad=";
+    let FirstCity = document.querySelector("#FirstCity");
+    let LastCity = document.querySelector("#LastCity");
+    let ComputingBtn = document.querySelector("#ComputingBtn");
+    let Spinner = document.querySelector("#Spinner");
+    let ResultText = document.querySelector("#ResultText");
+
+    //EventListeners
+    document.addEventListener("DOMContentLoaded", AppInit);
+    ComputingBtn.addEventListener("click", Distance);
+    FirstCity.addEventListener("change", CheckValue);
+    LastCity.addEventListener("change", CheckValue);
+
+    //Functions
+    function AppInit() {
+        // Disabled "ComputingBtn" in Document Loaded Time 
+        ComputingBtn.disabled = true;
+    }
+
+    function CheckValue() {
+        // Check Value SelectBoxs For Disabled And Enabled Elements
+        if (FirstCity.value == "" || FirstCity.value == null || LastCity.value == "" || LastCity.value == null) {
+            ComputingBtn.disabled = true;
+        } else {
+            ComputingBtn.disabled = false;
+        }
+    }
+
+    async function Distance() {
+        // Hidden ResultText in Seraching Time
+        ResultText.style.display = "none";
+        Spinner.style.display = "block";
+        // Create New Url For Fecth Data
+        let NewLink = Part1 + FirstCity.value + Part2 + LastCity.value;
+        // Check The Connection
+        if (window.navigator.onLine === true) {
+            // Fecth Data And Get Data From API
+            let Data = await fetch(NewLink);
+            // Convert Data To Text
+            let Text1 = Data.text();
+            Text1.then((Result) => {
+                // Hidden Spinner in Get Data Time
+                Spinner.style.display = "none";
+                // Placement New Data in "ResultText"
+                ResultText.style.display = "block";
+                ResultText.innerHTML = `${Result}km`;
+            });
+
+        }
+
+    }
+</script>
+
+</html>
